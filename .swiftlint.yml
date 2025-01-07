@@ -9,6 +9,7 @@ disabled_rules:
   - trailing_comma
   - todo
   - opening_brace
+  - identifier_name
 
 opt_in_rules: # some rules are only opt-in
   - anyobject_protocol
@@ -93,11 +94,6 @@ opt_in_rules: # some rules are only opt-in
   
 force_cast: warning
 force_try: warning
-
-identifier_name:
-  excluded:
-    - id
-    - URL
 
 analyzer_rules:
   - unused_import
