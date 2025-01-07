@@ -5,19 +5,10 @@
 <a href="https://swiftpackageindex.com/space-code/page-control"><img alt="Swift Compatibility" src="https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fspace-code%2Fpage-control%2Fbadge%3Ftype%3Dswift-versions"/></a> 
 <a href="https://swiftpackageindex.com/space-code/page-control"><img alt="Platform Compatibility" src="https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fspace-code%2Fpage-control%2Fbadge%3Ftype%3Dplatforms"/></a> 
 <a href="https://github.com/space-code/page-control"><img alt="CI" src="https://github.com/space-code/page-control/actions/workflows/ci.yml/badge.svg?branch=main"></a>
-
-<a href="https://github.com/space-code/page-control"><img alt="Number of GitHub contributors" src="https://img.shields.io/github/issues/space-code/page-control"></a>
-<a href="https://github.com/space-code/page-control"><img alt="Number of GitHub issues that are open" src="https://img.shields.io/github/stars/space-code/page-control"></a>
-<a href="https://github.com/space-code/page-control"><img alt="Number of GitHub closed issues" src="https://img.shields.io/github/issues-closed/space-code/page-control"></a>
-<a href="https://github.com/space-code/page-control"><img alt="Number of GitHub stars" src="https://img.shields.io/github/contributors/space-code/page-control"></a>
-<a href="https://github.com/space-code/page-control"><img alt="Number of GitHub pull requests that are open" src="https://img.shields.io/github/issues-pr-raw/space-code/page-control"></a>
-
-<a href="https://github.com/space-code/page-control"><img alt="GitHub release; latest by date" src="https://img.shields.io/github/v/release/space-code/page-control"></a>
-<a href="https://github.com/apple/swift-package-manager" alt="page-control on Swift Package Manager" title="page-control on Swift Package Manager"><img src="https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg" /></a>
 </p>
 
 ## Description
-`page-control` description.
+`page-control` is a highly customizable page control.
 
 - [Usage](#usage)
 - [Requirements](#requirements)
@@ -29,7 +20,39 @@
 
 ## Usage
 
+```swift
+import PageControl
+
+let pageControl = PageControl()
+
+pageControl.numberOfPages = 5
+pageControl.drawer = ExtendedLineDrawer(
+    itemColor: .lightGray,
+    selectedItemColor: .blue
+)
+```
+
+The custom drawer can be implemented, such as:
+
+```swift
+import PageControl
+
+final class MyCustomDrawer: BaseDrawer {
+    override public func draw(_ rect: CGRect) {
+        // Custom implementation for drawing content in the provided rectangle.
+    }
+
+    override public var contentSize: CGSize {
+        // Custom implementation for calculating the content size.
+    }
+}
+```
+
 ## Requirements
+
+- iOS 14.0+
+- Xcode 16.0
+- Swift 6.0
 
 ## Installation
 ### Swift Package Manager
